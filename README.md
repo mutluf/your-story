@@ -53,16 +53,13 @@ RabbitMQ UI: http://localhost:15672
 ```bash
 git clone https://github.com/yourusername/your-repo-name.git
 cd your-repo-name
-2. Set up the database
 ```
-```bash
-Apply EF Core migrations:
-
+2. Set up the database
+3. Apply EF Core migrations:
 ```bash
 dotnet ef database update
 ```
 If you make changes to models later:
-
 ```bash
 dotnet ef migrations add MigrationName
 dotnet ef database update
