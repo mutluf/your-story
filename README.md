@@ -77,6 +77,39 @@ If you make changes to models later:
 dotnet ef migrations add MigrationName
 dotnet ef database update
 ```
+
+## 🧩 EF Core & Project Roles in Onion Architecture
+
+In this solution, the project follows the **Onion Architecture** pattern. Therefore, responsibilities are distributed across different layers. When working with Entity Framework Core, it's important to understand the role of each project:
+
+### 📌 `MyProject.Api` – **Startup Project (for running the app)**
+
+- This is the **entry point** of the application.
+- It contains `Program.cs` / `Startup.cs`, and is responsible for configuring and running the whole app.
+- Always use this project when:
+  - Running the application (`dotnet run`)
+  - Debugging
+  - Hosting your APIs
+
+### 📌 `MyProject.Persistence` – **Migration Project (for EF Core)**
+
+- This project contains:
+  - `DbContext` implementation
+  - Entity Framework Core configurations (via Fluent API)
+  - `Migrations` folder
+- You must use this project as the **startup project when adding or updating EF Core migrations**.
+
+### ⚙️ EF Core Migration Commands – Proper Setup
+
+If you face issues like the database not being created or tables not appearing, follow these steps:
+
+1. **Set `MyProject.Persistence` as Startup Project** in your IDE (e.g., Rider or Visual Studio).
+2. Open terminal and navigate to the solution root.
+3. Run the following commands:
+
+```bash
+"C:\Program Files\dotnet\dotnet.exe" ef migrations add --project Infrastructure\DualPay.Persistence\DualPay.Persistence.csproj --startup-project Presentation\DualPay.API\DualPay.API.csproj --context DualPay.Persistence.Context.DualPayDbContext --configuration Debug Initial --output-dir Migrations
+"C:\Program Files\dotnet\dotnet.exe" ef database update --project Infrastructure\DualPay.Persistence\DualPay.Persistence.csproj --startup-project Presentation\DualPay.API\DualPay.API.csproj --context DualPay.Persistence.Context.DualPayDbContext --configuration Debug 20250505175415_Initial
 ⚠️ Stored Procedures
 Stored procedures are not automatically run by EF Core.
 You need to execute the SQL files manually:
