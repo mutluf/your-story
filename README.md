@@ -119,3 +119,17 @@ dotnet ef database update
   }
 }
 ```
+
+## ⚠️🚨 IMPORTANT: START BOTH PROJECTS! 🚨⚠️
+
+# ✅ YOU MUST RUN BOTH SERVICES FOR THE SYSTEM TO WORK PROPERLY:
+
+### 🔹 1. `DualPay` – Main API project (Onion Architecture)
+> Located in: `DualPay/Presentation/DualPay.API`
+
+### 🔹 2. `PaymentWorker` – Background worker service (RabbitMQ, Hangfire, etc.)
+> Located in: `Dualpay/PaymentWorker`
+
+These two projects **must** be running **simultaneously** for payments, background tasks, and messaging to function correctly.
+
+
