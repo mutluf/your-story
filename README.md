@@ -14,8 +14,20 @@ This project is a modern backend application built with **.NET 8**, leveraging *
 - **Hangfire** – Background job processing
 - **MediatR** – CQRS implementation
 - **Swagger (Swashbuckle)** – API documentation
+- **AutoMapper** – Mapping between DTOs and entities
+- **FluentValidation** – Input validation rules
+- **Microsoft Identity** – Authentication and role-based authorization
 
 ---
+📁 Project Structure
+ DualPay/
+ ├── Presentation/DualPay.API                  # Controllers, ActionFilters, FilterAttributes
+ ├── Core/DualPay.Application     	       # Business rules, CQRS handlers, interfaces, ValidationBehaviors, Events, Mappings, DTOs, Validators
+ ├── Infrastructure/DualPay.Infrastructure     # External service configurations (e.g., Redis Caching, RabbitMQ[Consumers, Publishers]), Worker Service for consumers
+ ├── Infrastructure/DualPay.Persistence        # EF Core DbContext, migrations, repositories, Hangfire[Background services, scheduled tasks], data seeders
+ ├── Core/DualPay.Domain                       # Entities, Enums
+ ├── Runner.PaymentWorker                      # RabbitMQ - Messaging[Consumers, Publishers], Events
+
 
 ## 🧰 Prerequisites
 
@@ -51,8 +63,8 @@ RabbitMQ UI: http://localhost:15672
 ⚙️ Getting Started
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/mutluf/papara-bootcamp-final-project.git
+cd papara-bootcamp-final-project
 ```
 2. Set up the database
 3. Apply EF Core migrations:
