@@ -84,7 +84,7 @@ You need to execute the SQL files manually:
 # In SQL Server Management Studio or Azure Data Studio
 Open and run files in: 
 ```bash
-https://github.com/mutluf/papara-bootcamp-final-project/blob/main/fatma-mutlu-screenshots-of-the-dualpay-final-project.pdf
+https://github.com/mutluf/papara-bootcamp-final-project/blob/main/dual-pay-stored-procedures-for-reports.sql
 ```
 3. Configure appsettings.json
 ```bash
