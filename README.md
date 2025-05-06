@@ -77,7 +77,15 @@ If you make changes to models later:
 dotnet ef migrations add MigrationName
 dotnet ef database update
 ```
+⚠️ Stored Procedures
+Stored procedures are not automatically run by EF Core.
+You need to execute the SQL files manually:
 
+# In SQL Server Management Studio or Azure Data Studio
+Open and run files in: 
+```bash
+https://github.com/mutluf/papara-bootcamp-final-project/blob/main/fatma-mutlu-screenshots-of-the-dualpay-final-project.pdf
+```
 3. Configure appsettings.json
 ```bash
 "ConnectionStrings": {
