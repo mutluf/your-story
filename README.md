@@ -20,15 +20,16 @@ This project is a modern backend application built with **.NET 8**, leveraging *
 
 ---
 📁 Project Structure
+```bash
  DualPay/
  ├── Presentation/DualPay.API                  # Controllers, ActionFilters, FilterAttributes
- ├── Core/DualPay.Application     	       # Business rules, CQRS handlers, interfaces, ValidationBehaviors, Events, Mappings, DTOs, Validators
+ ├── Core/DualPay.Application     	            # Business rules, CQRS handlers, interfaces, ValidationBehaviors, Events, Mappings, DTOs, Validators
  ├── Infrastructure/DualPay.Infrastructure     # External service configurations (e.g., Redis Caching, RabbitMQ[Consumers, Publishers]), Worker Service for consumers
  ├── Infrastructure/DualPay.Persistence        # EF Core DbContext, migrations, repositories, Hangfire[Background services, scheduled tasks], data seeders
  ├── Core/DualPay.Domain                       # Entities, Enums
  ├── Runner.PaymentWorker                      # RabbitMQ - Messaging[Consumers, Publishers], Events
 
-
+```
 ## 🧰 Prerequisites
 
 Before running the project, make sure the following are installed:
