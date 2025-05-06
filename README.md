@@ -27,7 +27,7 @@ This project is a modern backend application built with **.NET 8**, leveraging *
  ├── Infrastructure/DualPay.Infrastructure     # External service configurations (e.g., Redis Caching, RabbitMQ[Consumers, Publishers]), Worker Service for consumers
  ├── Infrastructure/DualPay.Persistence        # EF Core DbContext, migrations, repositories, Hangfire[Background services, scheduled tasks], data seeders
  ├── Core/DualPay.Domain                       # Entities, Enums
- ├── Runner.PaymentWorker                      # RabbitMQ - Messaging[Consumers, Publishers], Events
+ ├── PaymentWorker                             # RabbitMQ - Messaging[Consumers, Publishers], Events
 
 ```
 ## 🧰 Prerequisites
