@@ -120,6 +120,8 @@ dotnet ef database update
 }
 ```
 
+
+
 ## ⚠️🚨 IMPORTANT: START BOTH PROJECTS! 🚨⚠️
 
 # ✅ YOU MUST RUN BOTH SERVICES FOR THE SYSTEM TO WORK PROPERLY:
