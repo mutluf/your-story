@@ -68,7 +68,7 @@ dotnet ef database update
 3. Configure appsettings.json
 ```bash
 "ConnectionStrings": {
-    "MicrosoftSQL": "Server=localhost,1434;Database=DualPayDb;User Id=sa;Password=Sql2025!;TrustServerCertificate=True;"
+    "MicrosoftSQL": "Server=your_server;Database=DualPayDb;User Id=your_user;Password=your_password;TrustServerCertificate=True;"
   },
   "Token": {
     "Audience": "www.mydualpay.com",
