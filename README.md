@@ -64,3 +64,33 @@ If you make changes to models later:
 dotnet ef migrations add MigrationName
 dotnet ef database update
 ```
+
+3. Configure appsettings.json
+```bash
+"ConnectionStrings": {
+    "MicrosoftSQL": "Server=localhost,1434;Database=DualPayDb;User Id=sa;Password=Sql2025!;TrustServerCertificate=True;"
+  },
+  "Token": {
+    "Audience": "www.mydualpay.com",
+    "Issuer": "www.mydualpayapi.com",
+    "SecurityKey": "Welcome to the final DualP show!"
+  },
+  "InitialAdmin": {
+    "Email": "dpadmin@dualpay.com.tr",
+    "Password": "DP2025!"
+  },
+  "InitialUser": {
+    "Email": "dpuser@dualpay.com.tr",
+    "Password": "DP2025!"
+  },
+  "RabbitMQ": {
+    "Host": "localhost",
+    "Port" : "5672",
+    "UserName" : "guest",
+    "Password" : "guest"
+  },
+  "Redis": {
+    "Configuration": "localhost:6379",
+    "InstanceName": "Reports_"
+  }
+```
