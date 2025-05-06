@@ -94,3 +94,15 @@ dotnet ef database update
     "InstanceName": "Reports_"
   }
 ```
+📌 Updated Configuration Section for Worker Services
+ appsettings.json for Worker Service
+```bash
+{
+  "RabbitMQ": {
+    "Host": "localhost",
+    "Port": 5672,
+    "UserName": "guest",
+    "Password": "guest"
+  }
+}
+```
